@@ -14,7 +14,8 @@ resource "aws_s3_bucket_acl" "this" {
   acl    = "public-read"
 }
 
-resource "aws_s3_bucket_policy" "example_bucket_policy" {
+# TODO: Restrict to only CF
+resource "aws_s3_bucket_policy" "bucket_public_read" {
   bucket = aws_s3_bucket.this.id
 
   policy = jsonencode({
