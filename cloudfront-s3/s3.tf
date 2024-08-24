@@ -60,4 +60,10 @@ resource "aws_s3_object" "site_objects" {
   content_type = each.value.content_type
 
   etag = each.value.digests.md5
+
+  depends_on = [
+    aws_s3_bucket_acl.this,
+    aws_s3_bucket_public_access_block.this,
+    aws_s3_bucket_policy.bucket_public_read
+  ]
 }

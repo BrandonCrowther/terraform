@@ -7,9 +7,18 @@ module "resume_site" {
   site_entrypoint = "resume.pdf"
 }
 
+
 module "blog_site" {
   source      = "./cloudfront-s3"
   site_domain = "blog.bcrowthe.com"
   root_zone   = "bcrowthe.com"
   upload_path = "../blog/build"
+}
+
+
+module "snake_site" {
+  source      = "./cloudfront-s3"
+  site_domain = "snake.bcrowthe.com"
+  root_zone   = "bcrowthe.com"
+  upload_path = "../SnakeNN/web/build"
 }
