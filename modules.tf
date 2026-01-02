@@ -7,13 +7,13 @@ module "resume_site" {
   site_entrypoint = "resume.pdf"
 }
 
-
-module "blog_site" {
-  source      = "./cloudfront-s3"
-  site_domain = "blog.bcrowthe.com"
-  root_zone   = "bcrowthe.com"
-  upload_path = "../blog/build"
-}
+#
+# module "blog_site" {
+#   source      = "./cloudfront-s3"
+#   site_domain = "blog.bcrowthe.com"
+#   root_zone   = "bcrowthe.com"
+#   upload_path = "../blog/build"
+# }
 
 
 module "snake_site" {
@@ -39,6 +39,6 @@ module "justin_lawn_site2" {
   source          = "./cloudfront-s3"
   site_domain     = "tmp.jcrowthe.ca"
   root_zone       = "jcrowthe.ca"
-  upload_path     = "/home/bcrow/dev/justin2/build/client"
+  upload_path     = "../justin2/build/client"
   site_entrypoint = "index.html"
 }

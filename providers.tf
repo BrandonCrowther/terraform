@@ -3,6 +3,7 @@ terraform {
     region = "ca-central-1"
     bucket = "bcrowthe-tfstate"
     key    = "all.tfstate"
+    profile = "default"
   }
 }
 
